@@ -44,3 +44,5 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Amazon SDK
 gem 'aws-sdk'
 
+# heroku stuff
+gem 'rails_12factor', group: :production
