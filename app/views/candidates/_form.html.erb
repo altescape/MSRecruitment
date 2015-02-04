@@ -1,0 +1,47 @@
+<%= form_for @candidate do |f| %>
+
+  <% if @candidate.errors.any? %>
+    <h4 class="text-danger"><%= pluralize(@candidate.errors.count, "error") %> prohibited your form being saved</h4>
+    <ul class="text-danger">
+      <% @candidate.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </p>
+  
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </p>
+  
+  <p>
+    <%= f.label :phone %>
+    <%= f.text_field :phone, class: 'form-control' %>
+  </p>
+  
+  <p>
+    <%= f.label :position %>
+    <%= f.text_field :position, class: 'form-control' %>
+  </p>
+  
+  <p>
+    <%= f.label :resume %>
+    <%= f.file_field :resume, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.submit class: 'btn btn-primary' %>
+
+  </p>
+
+<% end %>
