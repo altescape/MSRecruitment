@@ -7,8 +7,10 @@
 </head>
 <body>
   <div class="container">
+    <h1 class="brand"><%= image_tag 'brand.png' %></h1>
     <%= yield %>
   </div>
+  <div class="session"></div>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

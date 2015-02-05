@@ -1,3 +1,73 @@
-// Place all the styles related to the candidates controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.brand {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 150px 0 50px;
+
+  img {width: 200px;}
+}
+
+.candidate_form {
+  margin: 0 auto;
+  margin-bottom: -120px;
+  max-width: 352px;
+  min-height: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  background: $body-bg;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .form-group {
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #CCC;
+
+    .form-control {
+      height: 50px;
+      padding: 10px 16px;
+      font-size: 14px;
+      line-height: 1.33;
+      border-radius: 0;
+      background-color: #EEE;
+      border: 0;
+    }
+
+    .col-sm-8 {padding-right: 0;}
+
+    .control-label {
+      padding-top: 14px;
+      white-space: nowrap;
+    }
+
+    &:last-child, &.submit-wrap {
+      border: 0;
+    }
+
+    .btn-submit {
+      padding: 20px;
+      border-radius: 0;
+      border: 0;
+    }
+  }
+
+  .errors {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($brand-danger, 0.7);
+    color: $body-bg;
+    text-align: center;
+
+    h4, ul, ul li {color: $body-bg;}
+  }
+
+  .progress {
+    margin: 0;
+    border-radius: 0;
+  }
+}

@@ -1,9 +1,10 @@
 class CandidatesController < ApplicationController
   def index
+    @candidate = Candidate.new
+    render 'new'
   end
 
   def new
-    # @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
     @candidate = Candidate.new
   end
 
@@ -11,7 +12,8 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.new(candidate_params)
 
     if @candidate.save
-      redirect_to @candidate
+      #redirect_to @candidate
+      render "welcome/thankyou" 
     else
       render 'new'
     end

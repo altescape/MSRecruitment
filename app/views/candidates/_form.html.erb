@@ -1,47 +1,75 @@
-<%= form_for @candidate do |f| %>
 
-  <% if @candidate.errors.any? %>
-    <h4 class="text-danger"><%= pluralize(@candidate.errors.count, "error") %> prohibited your form being saved</h4>
-    <ul class="text-danger">
-      <% @candidate.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-      <% end %>
-    </ul>
+<div class="candidate_form">
+  <%= form_for @candidate, :html => {:class => 'form-horizontal new_candidate'} do |f| %>
+
+    <% if @candidate.errors.any? %>
+      <div class="errors">
+        <h4 class="text-danger"><%= pluralize(@candidate.errors.count, "error") %> prohibited your form being saved</h4>
+        <ul class="text-danger list-inline">
+          <% @candidate.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <%= f.label :first_name %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <%= f.label :last_name %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <%= f.label :email %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <%= f.label :phone %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.text_field :phone, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <%= f.label :position %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.text_field :position, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <%= f.label :resume %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.file_field :resume, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group submit-wrap">
+      <%= f.submit "Apply", class: "btn btn-success btn-block btn-submit" %>
+    </div>
+
   <% end %>
-  
-  <p>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, class: 'form-control' %>
-  </p>
-
-  <p>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, class: 'form-control' %>
-  </p>
-  
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
-  </p>
-  
-  <p>
-    <%= f.label :phone %>
-    <%= f.text_field :phone, class: 'form-control' %>
-  </p>
-  
-  <p>
-    <%= f.label :position %>
-    <%= f.text_field :position, class: 'form-control' %>
-  </p>
-  
-  <p>
-    <%= f.label :resume %>
-    <%= f.file_field :resume, class: 'form-control' %>
-  </p>
-
-  <p>
-    <%= f.submit class: 'btn btn-primary' %>
-
-  </p>
-
-<% end %>
+</div>

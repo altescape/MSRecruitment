@@ -5,3 +5,39 @@
 
 @import "welcome";
 @import "candidates";
+
+body {
+}
+
+.session {
+  background-image: asset-url("background.jpg", image);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: block;
+  -webkit-filter: blur(6px);
+  filter: blur(6px);
+  height: 110%;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  z-index: -1;
+}
+
+.text-white {
+  color: $body-bg !important;
+}
+
+.btn-outline {
+  border: 2px solid $body-bg;
+  color: $body-bg;
+  background-color: rgba($body-bg, 0);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba($body-bg, 0.3);
+    color: $body-bg;
+  }
+}
+  

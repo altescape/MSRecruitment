@@ -7,12 +7,12 @@ $ ->
         fileInput = $(elem)
         form = $(fileInput.parents('form:first'))
         submitButton = form.find('input[type="submit"]')
-        progressBar = $('<div class=\'progress-bar\'></div>')
+        progressBar = $('<div class=\'progress-bar progress-bar-warning progress-bar-striped active\'></div>')
         barContainer = $('<div class=\'progress hidden\'></div>').append(progressBar)
         fileInput.after barContainer
         fileInput.fileupload
           fileInput: fileInput
-          url: 'http://' + s3params.url.host
+          url: '//' + s3params.url.host
           type: 'POST'
           autoUpload: true
           formData: s3params.fields
@@ -31,6 +31,8 @@ $ ->
           done: (e, data) ->
             submitButton.prop 'disabled', false
             progressBar.addClass 'done'
+            progressBar.removeClass 'progress-bar-striped'
+            barContainer.fadeOut 'slow'
             # extract key and generate URL from response
             location = $(data.jqXHR.responseXML).find('Location').text()
             # create hidden field
