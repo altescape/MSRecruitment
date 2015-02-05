@@ -12,7 +12,6 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.new(candidate_params)
 
     if @candidate.save
-      #redirect_to @candidate
       render "welcome/thankyou" 
     else
       render 'new'
@@ -20,7 +19,9 @@ class CandidatesController < ApplicationController
   end
 
   def show
-    @candidate = Candidate.find(params[:id])
+    # @candidate = Candidate.find(params[:id])
+    @candidate = Candidate.new
+    render 'new'
   end
 
   private

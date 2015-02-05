@@ -34,12 +34,23 @@
       border-radius: 0;
       background-color: #EEE;
       border: 0;
+      border-left: 1px solid #CCC;
+
+      &:focus {
+        background: $body-bg;
+        box-shadow: 0 0 15px rgba($brand-primary, 0.4);
+        position: relative;
+        z-index: 999;
+      }
     }
 
-    .col-sm-8 {padding-right: 0;}
+    .col-sm-8 {
+      padding-right: 0;
+      padding-left: 0;
+    }
 
     .control-label {
-      padding-top: 14px;
+      padding-top: 16px;
       white-space: nowrap;
     }
 
@@ -69,5 +80,13 @@
   .progress {
     margin: 0;
     border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 51px;
+    z-index: 999;
   }
 }
