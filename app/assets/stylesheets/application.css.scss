@@ -7,6 +7,8 @@
 @import "candidates";
 
 body {
+  font-family: "aktiv-grotesk-std",sans-serif;
+  font-weight: 300;
 }
 
 .session {
@@ -25,8 +27,19 @@ body {
   z-index: -1;
 }
 
-.text-white {
-  color: $body-bg !important;
+.content_wrapper {
+  padding: 40px;
+  background: rgb(221, 221, 221);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 31px;
+  margin-bottom: 30px;
+  color: black;
 }
 
 .btn-outline {
@@ -40,4 +53,10 @@ body {
     color: $body-bg;
   }
 }
-  
+@media (min-width: 768px) {
+  .lead {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+} 

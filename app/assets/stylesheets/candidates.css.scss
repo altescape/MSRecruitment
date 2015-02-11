@@ -3,15 +3,13 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  margin: 150px 0 50px;
+  margin: 20px 0 30px;
 
   img {width: 200px;}
 }
 
 .candidate_form {
-  margin: 0 auto;
-  margin-bottom: -120px;
-  max-width: 352px;
+  margin: 40px auto;
   min-height: 100%;
   padding: 0;
   position: relative;
@@ -20,13 +18,14 @@
   background: $body-bg;
   border-radius: 4px;
   overflow: hidden;
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
 
   .form-group {
     padding: 0;
     margin: 0;
     border-bottom: 1px solid #CCC;
 
-    .form-control {
+    .form-control, .field-wrap {
       height: 50px;
       padding: 10px 16px;
       font-size: 14px;
@@ -38,13 +37,20 @@
 
       &:focus {
         background: $body-bg;
-        box-shadow: 0 0 15px rgba($brand-primary, 0.4);
         position: relative;
+        box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.1), 0 11px 7px 0 rgba(0, 0, 0, 0.1);
         z-index: 999;
       }
     }
 
-    .col-sm-8 {
+    .radio {
+      label {
+        padding-left: 5px;
+        padding-right: 20px;
+      }
+    }
+
+    .no-padding {
       padding-right: 0;
       padding-left: 0;
     }

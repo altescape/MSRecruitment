@@ -7,7 +7,7 @@ $ ->
         fileInput = $(elem)
         form = $(fileInput.parents('form:first'))
         submitButton = form.find('input[type="submit"]')
-        progressBar = $('<div class=\'progress-bar progress-bar-warning progress-bar-striped active\'></div>')
+        progressBar = $('<div class=\'progress-bar progress-bar-success progress-bar-striped active\'></div>')
         barContainer = $('<div class=\'progress hidden\'></div>').append(progressBar)
         fileInput.after barContainer
         fileInput.fileupload

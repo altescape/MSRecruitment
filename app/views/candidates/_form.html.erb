@@ -14,55 +14,80 @@
     <% end %>
     
     <div class="form-group">
-      <div class="col-sm-4 control-label">
-        <%= f.label :first_name %>
+      <div class="col-xs-4 control-label">
+        <%= f.label :name %>
       </div>
-      <div class="col-sm-8">
-        <%= f.text_field :first_name, class: 'form-control' %>
+      <div class="col-xs-8 no-padding">
+        <%= f.text_field :name, class: 'form-control' %>
       </div>
     </div>
 
     <div class="form-group">
-      <div class="col-sm-4 control-label">
-        <%= f.label :last_name %>
+      <div class="col-xs-4 control-label">
+        <%= f.label :gender %>
       </div>
-      <div class="col-sm-8">
-        <%= f.text_field :last_name, class: 'form-control' %>
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <div class="col-sm-4 control-label">
-        <%= f.label :email %>
-      </div>
-      <div class="col-sm-8">
-        <%= f.text_field :email, class: 'form-control' %>
+      <div class="col-xs-8 no-padding field-wrap">
+        <div class="col-xs-4 col-xs-offset-1 radio">
+          <%= f.radio_button :gender, "male", :checked => true %>
+          <%= f.label :gender_male, "Male" %>
+        </div>
+        <div class="col-xs-6 no-padding radio">
+          <%= f.radio_button :gender, "female" %>
+          <%= f.label :gender_female, "Female" %>
+        </div>
       </div>
     </div>
     
     <div class="form-group">
-      <div class="col-sm-4 control-label">
-        <%= f.label :phone %>
+      <div class="col-xs-4 control-label">
+        <%= f.label :experience %>
       </div>
-      <div class="col-sm-8">
-        <%= f.text_field :phone, class: 'form-control' %>
+      <div class="col-xs-8 no-padding">
+        <%= f.select :experience, options_for_select((0..30).step(1)), {include_blank: "Please select"} ,{:class => 'form-control'} %>
       </div>
     </div>
     
     <div class="form-group">
-      <div class="col-sm-4 control-label">
+      <div class="col-xs-4 control-label">
         <%= f.label :position %>
       </div>
-      <div class="col-sm-8">
-        <%= f.text_field :position, class: 'form-control' %>
+      <div class="col-xs-8 no-padding">
+        <%= f.select :position, options_for_select(position_options), {include_blank: "Please select"}, {:class => 'form-control'} %>
       </div>
     </div>
     
     <div class="form-group">
-      <div class="col-sm-4 control-label">
+      <div class="col-xs-4 control-label">
+        <%= f.label :area %>
+      </div>
+      <div class="col-xs-8 no-padding">
+        <%= f.select :area, options_for_select(area_options), {include_blank: "Please select"}, {:class => 'form-control'} %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-xs-4 control-label">
+        <%= f.label :email %>
+      </div>
+      <div class="col-xs-8 no-padding">
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-xs-4 control-label">
+        <%= f.label :phone %>
+      </div>
+      <div class="col-xs-8 no-padding">
+        <%= f.phone_field :phone, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-xs-4 control-label">
         <%= f.label :resume %>
       </div>
-      <div class="col-sm-8" style="position: relative">
+      <div class="col-xs-8 no-padding" style="position: relative">
         <%= f.file_field :resume, class: 'form-control' %>
       </div>
     </div>
