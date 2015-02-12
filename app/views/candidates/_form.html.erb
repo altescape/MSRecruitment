@@ -26,7 +26,7 @@
       <div class="col-xs-4 control-label">
         <%= f.label :gender %>
       </div>
-      <div class="col-xs-8 no-padding field-wrap">
+      <div class="col-xs-8 no-padding field-wrap" style="padding-top: 8px;">
         <div class="col-xs-4 col-xs-offset-1 radio">
           <%= f.radio_button :gender, "male", :checked => true %>
           <%= f.label :gender_male, "Male" %>
@@ -87,8 +87,13 @@
       <div class="col-xs-4 control-label">
         <%= f.label :resume %>
       </div>
-      <div class="col-xs-8 no-padding" style="position: relative">
-        <%= f.file_field :resume, class: 'form-control' %>
+      <div class="col-xs-8 no-padding" style="position: relative; padding-top: 9px; height: 50px;">
+        <span class="btn btn-success fileinput-button">
+          <i class="glyphicon glyphicon-plus"></i>
+          <span>Select files...</span>
+          <%= f.file_field :resume %>
+        </span>
+        <span class="output-msg"></span>
       </div>
     </div>
 

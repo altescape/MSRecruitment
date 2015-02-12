@@ -8,6 +8,7 @@ class CandidateMailer < ActionMailer::Base
 
   def notification_email(candidate)
     @candidate = candidate
-    mail(to: "mnshayat@alhokair.com.sa", subject: 'Someone has applied for a job')
+    #mail(to: "mnshayat@alhokair.com.sa", subject: 'Someone has applied for a job')
+    mail(to: ENV['EMAIL_ADDY'], subject: 'Someone has applied for a job')
   end
 end
