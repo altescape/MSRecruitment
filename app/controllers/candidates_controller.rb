@@ -1,4 +1,7 @@
 class CandidatesController < ApplicationController
+
+  after_action :allow_iframe
+
   def index
     @candidate = Candidate.new
     render 'new'
@@ -29,5 +32,9 @@ class CandidatesController < ApplicationController
   private
     def candidate_params
       params.require(:candidate).permit(:name, :gender, :experience, :position, :area, :email, :phone, :resume)
+    end
+
+    def allow_iframe
+      response.headers.except! 'X-Frame-Options'
     end
 end
