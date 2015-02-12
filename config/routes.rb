@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get 'pspost', to: 's3#new'
   get 'thankyou', to: 'welcome#thankyou'
   root 'candidates#new'
+  post '/', to: 'candidates#new'
 
 end
