@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Someone has applied for a job</h1>
+
+    <h3>Details...</h3>
+    <p>
+      Name: <%= @candidate.name %><br>
+      Gender: <%= @candidate.gender %><br>
+      Experience: <%= @candidate.experience %><br>
+      Position: <%= @candidate.position %><br>
+      Area: <%= @candidate.area %><br>
+      Email: <%= @candidate.email %><br>
+      Phone: <%= @candidate.phone %><br>
+      <% if (@candidate.resume) %>
+      Resume: <%= @candidate.resume %><br>
+      <% end %>
+    </p>
+
+  </body>
+</html>
+  

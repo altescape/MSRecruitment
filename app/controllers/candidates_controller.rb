@@ -12,6 +12,8 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.new(candidate_params)
 
     if @candidate.save
+      CandidateMailer.welcome_email(@candidate).deliver
+      CandidateMailer.notification_email(@candidate).deliver
       render "welcome/thankyou" 
     else
       render 'new'
@@ -26,6 +28,6 @@ class CandidatesController < ApplicationController
 
   private
     def candidate_params
-      params.require(:candidate).permit(:name, :gender, :experience, :position, :area, :email, :phone)
+      params.require(:candidate).permit(:name, :gender, :experience, :position, :area, :email, :phone, :resume)
     end
 end

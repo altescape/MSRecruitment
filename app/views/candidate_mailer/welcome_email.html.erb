@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for applying to M&S</h1>
+    <p><strong>Dear <%= @candidate.name %>,</strong></p>
+    <p>Thank you for applying to Marks and Spencer, please find below the details of your application</p>
+
+    <h3>Details...</h3>
+    <p>
+      Name: <%= @candidate.name %><br>
+      Gender: <%= @candidate.gender %><br>
+      Experience: <%= @candidate.experience %><br>
+      Position: <%= @candidate.position %><br>
+      Area: <%= @candidate.area %><br>
+      Email: <%= @candidate.email %><br>
+      Phone: <%= @candidate.phone %><br>
+    </p>
+    
+    <p>
+      <strong>Good luck,</strong><br>
+      The M&amp;S Recruitment Team
+    </p>
+  </body>
+</html>
+  
