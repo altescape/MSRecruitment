@@ -13,12 +13,13 @@ $ ->
         fileInput.after barContainer
         fileInput.fileupload
           fileInput: fileInput
+          forceIframeTransport: true
           url: '//' + s3params.url.host
           type: 'POST'
           autoUpload: true
           formData: s3params.fields
           paramName: 'file'
-          dataType: 'XML'
+          #dataType: 'XML'
           replaceFileInput: false
           progressall: (e, data) ->
             progress = parseInt(data.loaded / data.total * 100, 10)
@@ -27,12 +28,14 @@ $ ->
           add: (e, data) ->
             data.context = $(msgOutput).text('Uploading...')
             data.submit()
-          start: (e) ->
+          start: (e, data) ->
             submitButton.prop 'disabled', true
             barContainer.removeClass 'hidden'
             progressBar.css('display', 'block').css 'width', '0%'
             return
           done: (e, data) ->
+            fileAddress = "http://#{s3params.url.host}/uploads/#{s3params.directory}/#{data.files[0]['name']}"
+            #console.log(fileAddress)
             data.context.text('Upload finished.')
             submitButton.prop 'disabled', false
             progressBar.addClass 'done'
@@ -44,7 +47,7 @@ $ ->
             input = $('<input />',
               type: 'hidden'
               name: fileInput.attr('name')
-              value: location)
+              value: fileAddress)
             form.append input
             return
           fail: (e, data) ->
